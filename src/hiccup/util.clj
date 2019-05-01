@@ -85,7 +85,11 @@
     (replace "<"  "&lt;")
     (replace ">"  "&gt;")
     (replace "\"" "&quot;")
-    (replace "'" (if (= *html-mode* :sgml) "&#39;" "&apos;"))))
+    
+    (replace "'" (cond (= *html-mode* :sgml) "&#39;"
+                       (= *html-mode* :thymeleaf) "'"
+                       :else "&apos;")
+    ))) 
 
 (defmacro with-encoding
   "Sets a default encoding for URL encoding strings. Defaults to UTF-8."

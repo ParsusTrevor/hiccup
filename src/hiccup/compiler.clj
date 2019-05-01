@@ -345,5 +345,5 @@
   [& content]
   (let [step1 (fn [] (apply compile-html content))
         step2 (fn [] (compile-multi `util/*escape-strings?* [true false] step1))
-        step3 (fn [] (compile-multi `util/*html-mode* [:html :xhtml :xml :sgml] step2))]
+        step3 (fn [] (compile-multi `util/*html-mode* [:html :xhtml :xml :sgml :thymeleaf] step2))]
     (step3)))
