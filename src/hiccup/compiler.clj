@@ -9,7 +9,7 @@
   (#{:xml :xhtml} util/*html-mode*))
 
 (defn- html-mode? []
-  (#{:html :xhtml} util/*html-mode*))
+  (#{:html :xhtml :thymeleaf} util/*html-mode*))
 
 (defn escape-html
   "Change special characters into HTML character entities if
